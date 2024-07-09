@@ -1,7 +1,7 @@
 {
-  "name": "hive-keychain-app",
+  "name": "spk-drive",
   "version": "1.0.0",
-  "description": "A web application that uses Hive Keychain for authentication",
+  "description": "SPK Drive - Providing front end file management access to SPK Network",
   "main": "script.js",
   "scripts": {
     "start": "npx serve ",

@@ -225,6 +225,12 @@ export function initiateFileUploadWithProgress(file, username, channelId, ipfsHa
     uploadProgress.style.width = '0%'; // Start with 0% width
     uploadProgress.textContent = '0%'; // Start with 0% text
 
+    // Extract filename and extension
+    const fullFileName = file.name;
+    const lastDotIndex = fullFileName.lastIndexOf('.');
+    const fileName = lastDotIndex !== -1 ? fullFileName.slice(0, lastDotIndex) : fullFileName;
+    const fileExt = lastDotIndex !== -1 ? fullFileName.slice(lastDotIndex + 1) : '';
+
     const headersA = new Headers({
         'Content-Type': 'application/json',
         'X-Account': username,
@@ -232,15 +238,18 @@ export function initiateFileUploadWithProgress(file, username, channelId, ipfsHa
         'X-Cid': ipfsHash,
         'X-Contract': channelId,
         'X-Files': ',' + ipfsHash,
-        'X-Sig': signature
+        'X-Sig': signature,
+        'X-Meta': `,${fileName},${fileExt},,,`
     });
     const headersU = new Headers({
         'X-Account': username,
         'X-Cid': ipfsHash,
         'X-Contract': channelId,
         'X-Files': ',' + ipfsHash,
-        'X-Sig': signature
+        'X-Sig': signature,
+        'X-Meta': `,${fileName},${fileExt},,,`
     });
+
     fetch('https://ipfs.dlux.io/upload-authorize', {
         method: 'GET',
         headers: headersA

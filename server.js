@@ -45,7 +45,7 @@ const postTransaction = async (data) => {
     const ops = [{
         required_auths: [process.env.BOT_ACCOUNT],
         required_posting_auths: [],
-        id: 'spkcc_channel_open',
+        id: 'spkccT_channel_open',
         json: JSON.stringify({
             "broca": parseFloat(data.json.match(/"kb":(\d+)/)[1]) * 10,
             "broker": "dlux-io",

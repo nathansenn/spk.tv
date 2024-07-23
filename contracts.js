@@ -48,7 +48,7 @@ document.getElementById('createContractButton').addEventListener('click', functi
                 {
                     "required_auths": [username],
                     "required_posting_auths": [],
-                    "id": "spkcc_channel_open",
+                    "id": "spkccT_channel_open",
                     "json": JSON.stringify({
                         "broca": cost, // Dynamic value based on the actual cost
                         "broker": serviceProvider,
@@ -121,7 +121,7 @@ export function pollForNewChannels(username) {
 function fetchChannels() {
     const username = localStorage.getItem('hive_username');
     if (username) {
-        const apiUrl = `https://spktest.dlux.io/@${username}`;
+        const apiUrl = `https://spk.nathansenn.spk.tv/@${username}`;
 
         fetch(apiUrl)
             .then(response => response.json())
@@ -211,7 +211,7 @@ export function storeFileOnBlockchain() {
                 {
                     "required_auths": [username],
                     "required_posting_auths": [],
-                    "id": "spkcc_store",
+                    "id": "spkccT_store",
                     "json": JSON.stringify({
                         "items": [contractId] // Use the contract ID directly
                     })
@@ -250,7 +250,7 @@ export function storeSelectedFilesOnBlockchain() {
                 {
                     "required_auths": [username],
                     "required_posting_auths": [],
-                    "id": "spkcc_store",
+                    "id": "spkccT_store",
                     "json": JSON.stringify({
                         "items": contractIds // Use the array of selected contract IDs
                     })
@@ -290,7 +290,7 @@ export function extendContractOnBlockchain() {
                 {
                     "required_auths": [username],
                     "required_posting_auths": [],
-                    "id": "spkcc_extend",
+                    "id": "spkccT_extend",
                     "json": JSON.stringify({
                         "broca": parseInt(cost, 10),
                         "id": contractId,

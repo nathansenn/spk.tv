@@ -113,7 +113,7 @@ function processDecryptionQueue() {
 export function updateMyFiles() {
     const username = localStorage.getItem('hive_username');
     // Hive blockchain API endpoint
-    const spkApiUrl = `https://spktest.dlux.io/@${username}`;
+    const spkApiUrl = `https://spk.nathansenn.spk.tv/@${username}`;
 
     // Fetch additional user data from SPK API
     fetch(spkApiUrl)
@@ -416,7 +416,7 @@ function calculateExtendCost(fileSize) {
 
 // Function to display all contracts
 export function displayAllContracts() {
-    fetch('https://spktest.dlux.io/feed')
+    fetch('https://spk.nathansenn.spk.tv/feed')
         .then(response => response.json())
         .then(data => {
             const feed = data.feed;
@@ -430,7 +430,7 @@ export function displayAllContracts() {
 
             const uniqueUsernames = [...new Set(usernames)];
             const userPromises = uniqueUsernames.map(username => {
-                return fetch(`https://spktest.dlux.io/@${username}`)
+                return fetch(`https://spk.nathansenn.spk.tv/@${username}`)
                     .then(response => response.json())
                     .then(userData => {
                         const fileContracts = userData.file_contracts || {};
@@ -513,7 +513,7 @@ document.getElementById('deleteFileButton').addEventListener('click', function()
                 {
                     "required_auths": [username],
                     "required_posting_auths": [],
-                    "id": "spkcc_contract_close",
+                    "id": "spkccT_contract_close",
                     "json": JSON.stringify({
                         "id": contractId
                     })

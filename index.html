@@ -52,7 +52,13 @@
     </div>
     <div class="nav-right"> <!-- Right side of the nav for login -->
       <div id="balance" class="desktop-only"></div>
-      <button id="loginButton" class="desktop-only">Login</button>
+      <div class="dropdown desktop-only">
+        <button id="loginButton" class="dropbtn">Login</button>
+        <div id="dropdownContent" class="dropdown-content">
+          <a href="#" id="linkBtcWalletButton">Link BTC Wallet</a>
+          <a href="#" id="logoutButton">Logout</a>
+        </div>
+      </div>
       <div id="burgerIcon" onclick="toggleSidebar()">
         <div></div>
         <div></div>
@@ -62,6 +68,10 @@
   </nav>
   <!-- Main content area -->
   <div class="content-area">
+    <!-- Create Account button (visible when logged out) -->
+    <div id="createAccountButtonContainer" style="display: none;">
+      <button id="createAccountButton">Create Account</button>
+    </div>
     <!-- Toggle for filtering contracts -->
     <div class="filter-toggle">
       <label><input type="checkbox" id="filterContractsToggle"> Show contracts with less than 3 storage nodes</label>
@@ -252,6 +262,18 @@
 </div>
 
 <div id="loginStatus"></div>
+
+<!-- Create Account Modal -->
+<div id="createAccountModal" class="modal">
+  <div class="modal-content">
+    <span class="close">&times;</span>
+    <form id="createAccountForm">
+      <label for="newUsername">Choose a Hive Username:</label>
+      <input type="text" id="newUsername" name="newUsername" required>
+      <button type="submit">Create Account</button>
+    </form>
+  </div>
+</div>
 
 <!-- Your custom JS -->
 <script src="dist/bundle.js" defer></script>

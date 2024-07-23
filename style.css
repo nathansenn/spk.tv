@@ -215,6 +215,63 @@ nav {
 }
 
 /* Style for login button with profile image */
+.dropbtn {
+    background-size: contain; /* Adjust the background size to contain to make it larger */
+    background-repeat: no-repeat;
+    background-position: center;
+    width: 50px; /* Set a fixed width */
+    height: 50px; /* Set a fixed height */
+    border-radius: 50%; /* Make the button round */
+    overflow: hidden; /* Ensure the image doesn't overflow the rounded corners */
+    align-self: center; /* Center the button vertically within the nav bar */
+    border: none; /* Remove default button border */
+    cursor: pointer; /* Pointer cursor on hover */
+}
+
+.dropdown {
+    position: relative;
+    display: inline-block;
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #f9f9f9;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+    right: 0; /* Align dropdown to the right */
+    top: 100%; /* Position below the button */
+    border-radius: 4px;
+}
+
+.dropdown-content a {
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+}
+
+.dropdown-content a:hover {
+    background-color: #f1f1f1;
+}
+
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+
+.dropdown:hover .dropbtn {
+    background-color: #3e8e41;
+}
+
+.dropdown.logged-in:hover .dropdown-content {
+    display: block;
+}
+
+.dropdown:not(.logged-in):hover .dropdown-content {
+    display: none;
+}
+
 #loginButton {
     background-size: contain; /* Adjust the background size to contain to make it larger */
     background-repeat: no-repeat;

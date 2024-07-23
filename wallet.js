@@ -27,7 +27,7 @@ document.getElementById('powerUpForm').addEventListener('submit', function(event
                     {
                         "required_auths": [username],
                         "required_posting_auths": [],
-                        "id": "spkcc_spk_up",
+                        "id": "spkccT_spk_up",
                         "json": customJson
                     }
                 ]

@@ -2,3 +2,6 @@
 /dist/
 /node_modules/
 .aider*
+/build/
+.vscode/launch.json
+.vscode/settings.json
